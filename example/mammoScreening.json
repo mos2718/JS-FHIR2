@@ -1,0 +1,33 @@
+{
+  "resourceType": "ServiceRequest",
+  
+  "status": "active",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "https://www.dicom.org.tw/codeSystem/serviceCategory",
+          "code": "imaging",
+          "display": "imaging"
+        }
+      ]
+    }
+  ],"intent": "original-order",
+
+  "code": {
+    "coding": [
+      {
+        "system": "https://www.dicom.org.tw/codeSystem/imagingCode",
+        "code": "breast.Mammo",
+        "display": "乳房 X 光攝影"
+      }
+    ],
+    "text": "mammography"
+  },
+  "subject": {
+    "reference": "Patient/1202"
+  },
+  "occurrenceDateTime": "2019-11-08T09:33:27"
+  
+
+}

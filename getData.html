@@ -1,0 +1,45 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+   <style type="text/css">
+        #Button1 {
+            height: 43px;
+            width: 140px;
+        }
+      
+        #TextArea1 {
+            height: 666px;
+            width: 1003px;
+        }
+  
+    </style> 
+	
+ <script src="HTTP2019.js"></script>   
+
+ <script>	
+  var myObj; 
+  function callBack() { 
+       // alert(ret);
+       document.getElementById("TextArea1").value = ret;
+    } 
+ 
+  function showData() {
+               var URLstr;
+			   URLStr = document.getElementById("URL").value
+               HTTPGetData( URLStr );     
+               //HTTPGetData("https://hapi.fhir.tw/fhir/Patient?organization=4");
+            }
+   </script>			
+
+</head>
+<body style="height: 780px">
+
+    
+	    URL:   <input type="text"  id="URL" size="80"  /> &nbsp; <br/><br/>
+       <input id="Button1" onclick="showData();" type="button" value="data to table" /><br/><br/>
+       <textarea id="TextArea1" name="S1"></textarea>
+	   
+</body>
+
+</html>
