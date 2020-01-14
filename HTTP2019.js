@@ -18,8 +18,8 @@ function HTTPGetData(urlStr) {
 function HTTPPostData(urlStr, dataStr ) {
     var HttpObj = new XMLHttpRequest();
 	HttpObj.open("POST", urlStr, true);
-  //  HttpObj.setRequestHeader("Content-type", "application/json+fhir");
-    HttpObj.setRequestHeader("Content-type", "application/xml+fhir");
+    HttpObj.setRequestHeader("Content-type", "application/json+fhir");
+   // HttpObj.setRequestHeader("Content-type", "application/xml+fhir");
     HttpObj.onreadystatechange = function () {
         if (HttpObj.readyState === 4) {
             ret = HttpObj.responseText;
