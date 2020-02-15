@@ -1,0 +1,43 @@
+{
+  "resourceType": "List",
+  "status": "current",
+  "mode": "working",
+  "title": "醫學資訊跨域專才必學之極簡 HTML 知識",
+  "date": "2020-01-18",
+
+  "entry": [
+    {
+      "item": {
+        "reference": "Media/4998"
+      }
+    },
+    {
+      "item": {
+        "reference": "Media/4999"
+      }
+    }
+  ]
+}
+
+https://hapi.fhir.tw/fhir/List/5000
+
+{
+  "resourceType": "List",
+  "status": "current",
+  "mode": "working",
+  "title": " 25 小時標準化醫資網頁應用快速入門",
+  "date": "2020-01-18",
+
+  "entry": [
+      {
+      "item": {
+        "reference": "List/5000"
+      }
+    }
+  ]
+}
+
+https://hapi.fhir.tw/fhir/List/5001
+
+
+  

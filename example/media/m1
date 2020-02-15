@@ -1,0 +1,28 @@
+{
+  "resourceType": "Media",
+  "status": "completed",
+  "content": {
+    "contentType": "text/html",
+    "url": "https://mos2718.github.io/W1/HTML_Introduction/Index.html",
+    "creation": "2020-01-18"
+  }, 
+  "note":[{"text":"HTML 簡介"}]
+}
+
+https://hapi.fhir.tw/fhir/Media/4998
+
+
+{
+  "resourceType": "Media",
+  "status": "completed",
+  "content": {
+    "contentType": "text/html",
+    "url": "https://mos2718.github.io/W1/HTMLForm/Index.html",
+    "creation": "2020-01-18"
+  }, 
+  "note":[{"text":"HTML 表單"}]
+}
+https://hapi.fhir.tw/fhir/Media/4999
+
+
+  

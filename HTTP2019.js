@@ -27,7 +27,7 @@ function HTTPPostData(urlStr, dataStr ) {
              alert(ret);
         }
     }
-	
-	
+
     HttpObj.send(dataStr);
+  //  getData
 }

@@ -1,0 +1,90 @@
+   Document source :   
+
+	{
+        "resourceType": "DocumentReference",
+		"identifier": slotID
+        "status": "current",
+        "docStatus": "final",
+        "description": "HTML_introduction",
+        "content": [
+          {"attachment": {
+              "url": "HTML_Intro_2018.pptx",
+              "title": "HTML introduction"
+            }		
+          },
+		 {"attachment": {
+              "url": "HTML_Tags_Intro_2017.pptx",
+              "title": "HTML tags"
+            }		
+          },
+		{"attachment": {
+              "url": "Limg.html",
+              "title": "HTML img example"
+            }		
+          } 
+        ]
+      }
+
+
+   Resource Server (repository)
+
+	 {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "docStatus": "final",
+        "description": "HTML introduction",
+        "content": [
+          {"attachment": {
+              "url": "https://resourceRoot/elearning/JSandFHIR/htmlIntroduction/HTML_Intro_2018.pptx",
+              "title": "HTML introduction"
+            }		
+          },
+		 {"attachment": {
+              "url": "https://resourceRoot/elearning/JSandFHIR/htmlIntroduction/HTML_Tags_Intro_2017.pptx",
+              "title": "HTML tags"
+            }		
+          },
+		{"attachment": {
+              "url": "https://resourceRoot/elearning/JSandFHIR/htmlIntroduction/Limg.html",
+              "title": "HTML img example"
+            }		
+          } 
+        ]
+      }
+	  
+	 Registry: portal 
+	  {
+        "resourceType": "DocumentReference",
+        "id": "94214",
+       
+	   response id to repository 
+	  
+	 內容產生及 documentReference 發布流程 
+	   resource server 產生或存放內容
+	   resource server 產生  documentReference 並上傳到 portal
+	      resource server 紀錄此 documentReference 及 portal 回應之 documentReference 
+		
+    文件調閱流程
+	  當使用者點某門課，則依據課程代碼(slot id) 查所屬之 documentReference， Portal  FHIR server 回應該門課 之全部 documentReferences，在於 potal 排成網頁，回應到瀏覽器端
+	  
+     選定某一個  documentReferences 連結
+      Request 
+	  HTTP client 向  portal get documentReference 及取得此對應之授權 token(其 scope 內含此  documentReference 之 id 及 resourceServer endpoint)
+	   手動作 Token 範例 ，scope 
+    	  get
+	      resourceRootURL/DocumentReference/id
+	  Response:	  
+	    portal  依據 documentReference 產生學習內容列表網頁 傳給 HTTP client
+		 and JWT Token
+	  點選網頁 產生 HTTP URL (?包含 DocumentReference id )，向resourceServer 要資料( 檢查 token)
+	    1. 檢查 token scope 包含之 DocumentReference id  是否與 HTTP URL 之?包含 DocumentReference id 一致，
+		 Yes  找到該份 DocumentReference，  No :reject
+  		2.檢查 HTTP request URL 是否包含在 DocumentReference attachments 當中`,
+		  Yes: 回應 request 之內容， No: reject
+		  
+	
+	 注意事項
+	 1. attachment HTTP client 跟 resourceServer get 資料時，是否需設定 mine type
+	 2. HTML web page 中可能參考到 resourceServer 中其他檔案，如圖片、影片等，HTTP client 開啟網頁後，其前端程式(JS or APP) get 這些 
+	    HTML 網頁標籤參考檔案， resourceServer 需允許調閱
+	 
